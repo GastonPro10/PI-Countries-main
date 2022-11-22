@@ -1,0 +1,100 @@
+.fondo2{
+    background-color: aliceblue;
+
+}
+.Banner1{
+    background: url("https://media.istockphoto.com/vectors/abstract-gradient-blue-background-mesh-gradient-soft-mixing-colors-vector-id1144480938?b=1&k=6&m=1144480938&s=170667a&w=0&h=4CpW5od8aWdD6_wT4LnGvP3cYho46AJAW8lyF7w3LRI=");
+    padding: 2%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gamesDiv{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filtros{
+    display: flex;
+    justify-content: end;
+    margin: 8px;
+}
+body{
+    background-color: aliceblue;
+}
+
+.PaginaPri{
+    display: flex;
+    justify-content: initial;
+    align-items: initial;
+    position: relative;
+    right: 235px;
+    text-decoration: none;
+    font-size: 22px;
+    color: blueviolet;
+}
+.PaginaPri:hover{
+    color: rgb(53, 155, 155);
+}
+
+.Acti{
+    display: flex;
+    justify-content: end;
+    position: relative;
+    left: 235px;
+    align-items: flex-end;
+    text-decoration: none;
+    font-size: 22px;
+    color: blueviolet;
+}
+.Acti:hover{
+    color: rgb(53, 155, 155);
+}
+
+.fil1 {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 5px;
+    width: 5%;
+}    .fil1 {
+        font-family: 'Arial';
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 10%;
+        cursor: pointer;
+        padding: 8px 29px;
+        height: 35px;
+        outline: 0;
+        border: 2px outset #b227cb;
+        border-radius: 21px;
+        background: #2baecd;
+        color: #ffffff;
+        appearance: none;
+        transition: 1s;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+        .fil1::-ms-expand {
+            display: none;
+        }
+        .fil1:hover,
+        .fil1:focus {
+            color: #ffffff;
+            background: #6c228a;
+        }
+        .fil1:disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+.link5{
+    text-decoration: none;
+    color: black;
+}

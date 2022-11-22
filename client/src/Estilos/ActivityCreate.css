@@ -1,0 +1,55 @@
+.contenedor2{
+    height: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(fondo.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; 
+    min-height: 100vh;
+}
+
+h1{
+    text-align: center;
+    font-weight: 700;
+}
+
+.formg{
+    background: beige;
+    padding: 85px 125px;
+    margin-bottom: 35px;
+    box-shadow: 10px 0 6px 0 rgba(168, 168, 168, 0.8);
+    border-radius: 20px;
+}
+
+.form{
+    width: 100%;
+    margin: auto;
+}
+
+form .group{
+    position: relative;
+    margin: 15px;
+}
+
+input{
+    background: none;
+    color: rgb(90, 180, 201);
+    font-size: 17px;
+    padding: 2px 1px 4px 1px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid;
+}
+
+.letter{
+    font-size: 20px;
+}
+
+p{
+    color: rgb(255, 0, 0);
+    background-color: brown;
+}

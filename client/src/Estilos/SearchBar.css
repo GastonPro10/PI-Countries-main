@@ -1,0 +1,26 @@
+.button5 {
+    font-family: Courier New;
+    color: #0c385c;
+    border-style:solid;
+    font-size: 17px;
+    padding: 5px;
+    text-decoration: none;
+    border-width:3px;
+    border-color:#bb26bb;
+    box-shadow: 5px 2px 6px 0px rgba(176,42,176,.62)
+  }
+  .button5:hover {
+    background: #d94ad7;
+  }
+
+.input5{
+    border-style:solid; 
+    padding:4px; 
+    font-size:17px; 
+    border-width:3px; 
+    border-radius:0px; 
+    background-color:#ffffff; 
+    border-color:#4bb0cf; 
+    color:#0e0e0e; 
+    box-shadow: 5px 2px 6px 0px rgba(176,42,176,.62)
+}

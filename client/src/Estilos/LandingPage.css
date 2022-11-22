@@ -1,0 +1,35 @@
+.fondo{
+    background-image: url("https://soyfernando.com/wp-content/uploads/2022/01/rm373batch4-35-scaled.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: aqua;
+    min-height: 100vh;
+}
+
+
+
+.text1{
+    color: rgb(48, 224, 13);
+    position: absolute; top: 77px; left: 160px;
+    font-weight: bold;
+    font-size: 66px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.text2{
+    position: absolute; top: 217px; left: 100px;
+    font-size: 25px;
+    color: rgb(238, 209, 173);
+}
+
+.boton1{
+    position: absolute; top: 377px; left: 230px;
+    border-radius: 10px;
+    background-color: antiquewhite;
+    color: rgb(48, 224, 13);
+    font-size: 38px;
+    cursor: pointer;
+    font-weight: bold;
+}

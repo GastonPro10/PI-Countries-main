@@ -1,0 +1,41 @@
+.Card1{
+    flex-wrap: wrap;
+    border: 1px solid black;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgb(240, 240, 172);
+    box-shadow: 6px 5px 9px 4px #108f80;
+}
+
+.countrydiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    align-items: center;
+    margin: 1px;
+    overflow: hidden;
+    width: 220px;
+    height: 245px;  
+}
+
+.container-game:hover {
+    animation: myAnim 1s ease 0s 1 normal forwards;;
+    cursor: pointer;
+}
+
+.countrydiv img{
+    width: 200px;
+    height: 120px;
+
+} 
+
+.countrydiv h3{
+    font-weight: 900;
+    text-decoration: none;
+}
+.name1{
+    text-decoration: none;
+}
+
