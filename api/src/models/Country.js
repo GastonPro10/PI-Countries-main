@@ -32,7 +32,10 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
     },
     population: {
-      type: DataTypes.STRING,
+      type: DataTypes.FLOAT,
+    },
+    currencies: {
+      type: DataTypes.STRING
     },
     createdDb: {
       type: DataTypes.BOOLEAN,

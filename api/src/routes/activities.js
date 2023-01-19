@@ -1,13 +1,14 @@
 require('dotenv').config();
 const axios = require('axios');
 const { Router } = require('express');
+const { TimeoutError } = require('sequelize');
 const { Activity, Country } = require('../db');
 
 
 const router = Router();
 
-const getDbActivity = async () => {
-	return await Activity.findAll({
+const getDbActivity = async () => { 
+	return await Activity.findAll({ 
 		include: {
 			model: Country,
 			attribute: ['name', 'img', 'continents', 'capital'],
@@ -32,21 +33,41 @@ router.get('/', async (req, res) => {
 )
 
 router.post('/', async (req, res) => {
-	let { name, difficulty, duration, season, countries } = req.body;
+	try {
+		let { name, difficulty, duration, season, countries } = req.body;
+	
+		const createActivity = await Activity.create({
+			name,
+			difficulty,
+			duration,
+			season,
+		});
+	
+		if (countries) {
+	
+			await createActivity.addCountries(countries); 
+		} 
+	
+		return res.status(200).json({ mesage: 'exito', createActivity });
+		
+	} catch (error) {
+		res.status(400).send({error: error.message})
+	}
+});
 
-	const createActivity = await Activity.create({
-		name,
-		difficulty,
-		duration,
-		season,
-	});
+const deleteActivity = async (name) => {
+	const activity = await Activity.findOne({where:{name}});
+	await activity.destroy();
+}
 
-	if (countries) {
-
-		await createActivity.addCountries(countries); 
-	} 
-
-	return res.status(200).json({ mesage: 'exito', createActivity });
+router.delete('/', async (req,res) => {
+    try{
+        const {name} = req.body;
+        await deleteActivity(name);
+        res.status(201).send("La actividad fue eliminada correctamente");
+    }catch(error){
+        res.status(404).send("La actividad no pudo ser eliminada"); 
+    }
 });
 
 

@@ -8,6 +8,10 @@
     box-shadow: 6px 5px 9px 4px #108f80;
 }
 
+.Card1:hover{
+    transform: translateY(-1%);
+}
+
 .countrydiv{
     display: flex;
     flex-direction: column;

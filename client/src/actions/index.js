@@ -69,6 +69,16 @@ export function postActivity(info) {
     }
 }
 
+export const deleteActivity = (name) => {
+    return async function (dispatch){
+        var json = await axios.delete("http://localhost:3001/activities", {data:{name}})
+        return dispatch({
+            type: "DELETE_ACTIVITY",
+            payload: name
+        })
+    }
+}
+
 export function getDetail(id){
     return async function (dispatch){
         try {

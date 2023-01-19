@@ -3,22 +3,24 @@ const axios = require('axios');
 const { Router } = require('express');
 const { Activity, Country } = require('../db');
 
-
+ 
 const router = Router();
 
 const getApiInfo = async () => { //trabajamos de manera asincronica porque no sabemos cuanto vaya a tardar la funcion en traer la infromacion de la api
 	try{
 	const { data } = await axios.get('https://restcountries.com/v3/all'); //creamos la constante con la que vamos hacer el llamado a la api
-	const apiInfo = await data.map((c) => { //hacemos un map de la información por medio de un objeto para que me devuelva unicamente la informacion que necesito
+	const apiInfo = await data.map((g) => { 
 		return {
-			id: c.cca3,
-			name: c.name.common,
-			img: c.flags[0],
-			continents: c.continents[0],
-			capital: c.capital? c.capital[0] : 'No contiene' , 
-			subregion: c.subregion ? c.subregion : '',  // de lo contrario no accedo
-			area: c.area,
-			population: c.population,
+			id: g.cca3,
+			name: g.name.common,
+			img: g.flags[0],
+			continents: g.continents[0],
+			capital: g.capital? g.capital[0] : 'No contiene' , 
+			subregion: g.subregion ? g.subregion : '',  // de lo contrario no accedo
+			area: g.area,
+			population: g.population,
+			currencies: g.currencies ? Object.values(g.currencies[Object.keys(g.currencies)[0]]).join(', Simbolo:')  :  "No contiene moneda"
+			
 		};
 	});
 	const countryResult = await Country.bulkCreate(apiInfo); // utilice el metodo bulkcreate para que me cree la informacion de una manera mas rapida. 
@@ -52,7 +54,7 @@ router.get('/', async (req, res) => {
 			? await getApiInfo() // asi que si la db esta vacia llamo a la api
 			: await getDb(); // si no saco de la bd
 	if (name) {
-		console.log('este es el name', name);
+		
 		const byName = countries.filter((n) =>
 			n.name.toLowerCase().includes(name.toLowerCase())
 		);

@@ -11,8 +11,8 @@ import SearchBar from "./SearchBar";
 
 export default function Home () {
     
-    const dispatch = useDispatch();
-    const allCountries = useSelector((state)=> state.countries)
+    const dispatch = useDispatch(); 
+    const allCountries = useSelector((state)=> state.countries) //Me traigo los datos
     
     useEffect(() => {
         dispatch(getCountries())
@@ -31,6 +31,7 @@ export default function Home () {
     const indexFirstPage = indexLastPage - countryPerPage
     const currentCountry = allCountries.slice(indexFirstPage, indexLastPage)
     const [orden, setOrden] = useState('')
+    const [orderPop, setOrderPop] = useState("")
 
     const paginado = (pageNumber) => {
         setCurrentPage(pageNumber)
@@ -52,7 +53,7 @@ export default function Home () {
         g.preventDefault();
         dispatch(orderByPop(g.target.value))
         setCurrentPage(1);
-        setOrden(`Ordenado ${g.target.value}`)
+        setOrderPop(`Ordenado ${g.target.value}`)
     }
     //Filtrado por Actividad:
     function handleActivity (g){
@@ -80,7 +81,7 @@ export default function Home () {
                 </select>
                 
                 <select className="fil1" onChange={g => handlePop(g)}>
-                    <option>Poblacion</option>
+                    <option value= "pop asc">Poblacion</option>
                     <option value= 'pop asc'>Poblacion Asc</option>
                     <option value= 'pop desc'>Poblacion Desc</option>
                 </select>
@@ -98,7 +99,7 @@ export default function Home () {
                     <option value = 'any'>Actividades</option>
 
                     {activities.map((g) => (
-                        <option value= {g.name}>{g.name}</option>
+                        <option value= {g.name} key={g.id}>{g.name}</option>
                     ))}
                 </select>
             </div>
