@@ -4,6 +4,7 @@ import { useDispatch,useSelector } from "react-redux";
 import { deleteActivity, getDetail } from "../actions";
 import { useEffect, useState } from "react";
 import '../Estilos/Detail.css'
+import SearchBar from "./SearchBar";
 
 
 const Detail = (props) => {
@@ -26,7 +27,12 @@ const Detail = (props) => {
 
 	return (
 		<div>
-
+			<div className="Banner1">
+                
+                <Link className="PaginaPri" to='/'>Pagina Principal</Link>
+                <SearchBar/>
+                <Link className="Acti" to= "/Activities">Crear Actividad</Link>
+            </div>
 			<div className='contenedor'>
 				{loading ? (
 					detail.map((i) => (
