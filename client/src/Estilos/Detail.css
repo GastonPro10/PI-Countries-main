@@ -21,7 +21,10 @@
 		align-items: center;
 		justify-content: center;
 		padding: 2rem;
-		margin: 2rem;
+		margin-left: 17rem;
+		margin-right: 17rem;
+		margin-bottom: 2rem;
+		margin-top: 2rem;
 		background-color: beige;
 		border: 1px solid #90400c;
 		border-radius: 10px;
